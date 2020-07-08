@@ -53,6 +53,9 @@ Float		- Mod+Shift+Minus
 Monacle		- Mod+Plus
 Fullscreen	- Mod+Shift+Plus
 
+increase gaps	- Mod+x
+decrease gaps	- Mod+z
+
 For launching programs:
 Lower case letters for everyday things like browser or file manager
 Upper case letters for config stuff like wifi or volume control
