@@ -1,0 +1,103 @@
+### PROGRAM LAUNCH ###
+
+### Config Progs ###
+
+alt + shift + w
+	st -e nmtui
+alt + shift + t
+	st -e vtop
+alt + shift + e
+	dmenuunicode
+alt + shift + r
+	arandr
+alt + shift + a
+	st -e pulsemixer
+alt + shift + s
+	st -e sudo wavemon
+alt + shift + c
+	clipmenu -sf \#303030 -sb \#ffcc00
+alt + shift + m
+	notify-send "Checking for mail." -t 1500; mailsync -a
+alt + shift + F4
+	scrot
+
+### Standard Progs ###
+
+alt + m
+	st -e neomutt
+alt + w
+	brave
+alt + f
+	pcmanfm
+alt + l
+	frescobaldi
+alt + n
+	liferea
+
+### HOT KEYS ETC ###
+
+#XF86Launch1
+#	xset dpms force off
+XF86TouchpadToggle
+ 	(synclient | grep "TouchpadOff.*1" && synclient TouchpadOff=0) || synclient TouchpadOff=1
+XF86Touchpad{Off,On}
+	synclient TouchpadOff={1,0}
+
+XF86MonBrightnessDown
+	brightnessctl s 5%-
+XF86MonBrightnessUp
+	brightnessctl s +5%
+
+# AUDIO KEYS
+
+XF86AudioMute
+	amixer sset Master toggle; notify-send "$(~/bin/soundcheck)" -t 500; rsbar
+XF86Audio{Raise,Lower}Volume
+	amixer sset Master 5%{+,-}; notify-send "$(~/bin/soundcheck)" -t 500; rsbar
+
+#XF86Audio{Next,Prev}
+#	mpc {next,prev}
+#XF86Audio{Pause,Play,Stop}
+#	mpc {pause,play,stop}
+#XF86Audio{Rewind,Forward}
+#	mpc seek {-,+}10
+#XF86AudioRecord
+#	dmenurecord
+#XF86AudioMedia
+#	$TERMINAL -e ncmpcpp
+
+#XF86PowerOff
+#	prompt "Shutdown computer?" "sudo -A shutdown -h now"
+#XF86Sleep
+#        notify-send "Sleeping..."; sleep 20; sudo pm-suspend
+#	prompt 'Hibernate computer?' 'sudo -A zzz'
+#XF86WWW
+#	$BROWSER
+#XF86DOS
+#	$TERMINAL
+#XF86TaskPane
+#	$TERMINAL -e htop
+#XF86Mail
+#	$TERMINAL -e thunderbird
+#XF86MyComputer
+#	$TERMINAL -e $FILE /
+
+# Change display
+#super + F3
+#	displayselect
+# Hibernate
+#super + F4
+#	prompt 'Hibernate computer?' 'sudo -A zzz -Z'
+#super + F5 is unbound.
+# Start torrent daemon/open interface
+#super + F6
+#	torwrap
+# toggle torrent daemon
+#super + F7
+#	td-toggle
+# sync email
+#super + F8
+#	mailsync
+# Mount a USB drive or Android device
+#super + {F9,F10}
+#	{dmenumount,dmenuumount}
