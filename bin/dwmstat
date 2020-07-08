@@ -1,0 +1,22 @@
+#!/bin/bash
+
+while true
+do
+
+sec=$(date +%S | cut -b 1)
+
+soundcheck=$(/home/rich/bin/soundcheck)
+powercheck=$(/home/rich/bin/powercheck)
+# netstatus=$(/home/rich/bin/netstatus)
+date="$(date +'%B %d, %Y')"
+stime="$(date +'%H:%M ')"
+
+xsetroot -name "  $soundcheck $powercheck  📆 $date ⏰ $stime" 2>> ~/.dwmstat_errors.log
+
+until [ $sec = "0" ];
+do
+   sleep 10
+   sec=$(date +%S | cut -b 1)
+done
+
+done

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+bat=$(cat /sys/class/power_supply/BAT0/capacity)
+# crg=$(cat /sys/class/power_supply/BAT0/status)
+plug=$(cat /sys/class/power_supply/AC0/online)
+
+if [ $plug = "1" ]; then
+   cbl=" ⚡"
+else cbl=" 🔋 "
+fi
+
+echo $cbl $bat%
+
+
+#if [ $bat = "35" ]; then
+#   notify-send "WARNING:" "Battery Low!" -t 10000
+#   play ~/.config/pop.ogg
+#fi
