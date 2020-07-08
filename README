@@ -1,0 +1,76 @@
+Patches installed:
+1 fullgaps 
+	- need to use version 6.2, not latest
+2 fullscreen 
+	- manually add one line to dwm.c
+  	- also add line to config.h
+3 fakefullscreen - this is cool for watching tutorials or whatever whilst multitasking
+  	-- at this point you also need extra things in the config file again --
+4 swallow - a handy way of managing redundant terminal windows
+
+may add the noborders patch at some point if I decide to use brighter border colour.
+noborders, fakefullscreen patches interfere with each other a bit when using the 
+fullscreen patch!
+
+removed barpadding patch - it is quite visually appealing
+but ultimately better to look at than to use.
+
+Design considerations:
+
+Had to remove 'iscol' lines from drw.c file to allow unicode icons on panel.
+I've also done the same with my build of dmenu.
+
+Four needed layouts - tile, float, full desktop (monacle), full screen.
+		    - Monacle would be redundant without gaps patch,
+		      which has lead me to removing the ability to adjust
+		      gap-size from the key bindings in order to enforce a
+		      behaviour of using both layouts for their intended uses.
+
+There is no minimise function for windows in dwm so I have Tag 9 as the 🗑 icon
+and put things there when I'm not using them.
+
+You might think there is no "window list" or a way to see what programs are 
+running but really you can just Mod+0 to display all tags at once - this is 
+like reveal or whatever its called on a Mac. Also you can just look at the 
+tags and see if there are windows open.
+
+Colours:
+This is something I change fairly frequently but something I like to do is have
+the border colour of the active window the same as the sel-colour on the bar/panel.
+This has the nice effect of making the border "join" to the bar and tag when in 
+monacle mode.
+
+Re-assess keyboard short-cuts:
+Starting programs and window controls should be assigned to different Mod keys.
+
+dmenu 	- Mod+Space
+	- a standard shortcut to for program launcher, similar to both Win and MacOS
+st	- Mod+Enter
+
+Desktop layouts:
+Tile		- Mod+Minus
+Float		- Mod+Shift+Minus
+Monacle		- Mod+Plus
+Fullscreen	- Mod+Shift+Plus
+
+For launching programs:
+Lower case letters for everyday things like browser or file manager
+Upper case letters for config stuff like wifi or volume control
+
+Standard Progs:
+neomutt		- Alt+ m
+brave		- Alt+ w
+pcmanfm		- Alt+ f
+frescobaldi	- Alt+ l
+liferea		- Alt+ n
+
+Config Progs:
+pulsemixer	- Alt+Shift+ a
+wavemon		- Alt+Shift+ s
+nmtui		- Alt+Shift+ w
+mailsync	- Alt+Shift+ m
+clipmenu	- Alt+Shift+ c
+emoticons	- Alt+Shift+ e
+arandr		- Alt+Shift+ r
+vtop		- Alt-Shift+ t
+screenshot	- Alt+Shift+ F4
