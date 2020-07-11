@@ -5,7 +5,7 @@ static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 10;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const int gappx		    = 18; 	/* set default gaps */
+static const int gappx		    = 0; 	/* set default gaps */
 static const int vertpad	    = 0;	/* vertical bar padding */
 static const int sidepad	    = 0;	/* horizontal bar padding */
 static const int swallowfloating    = 0;	/* 1 means swallow floating by default */
@@ -71,8 +71,8 @@ static Key keys[] = {
 
 	{ MODKEY,                   XK_minus,  	setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,         XK_minus,  	setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                   XK_equal,  	setlayout,      {.v = &layouts[2]} }, 
-	{ MODKEY|ShiftMask,	    XK_equal, 	fullscreen,	{0} },                
+/*	{ MODKEY,                   XK_equal,  	setlayout,      {.v = &layouts[2]} }, */
+	{ MODKEY,		    XK_equal, 	fullscreen,	{0} },                
 
 /*	{ MODKEY,                   XK_space,  	setlayout,      {0} }, */
 	{ MODKEY|ShiftMask,         XK_space,  	togglefloating, {0} },

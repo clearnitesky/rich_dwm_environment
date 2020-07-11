@@ -17,16 +17,18 @@ alt + shift + s
 alt + shift + c
 	clipmenu -sf \#303030 -sb \#ffcc00
 alt + shift + m
-	notify-send "Checking for mail." -t 1500; mailsync -a
+	notify-send "Checking for mail." -t 1500; mbsync -a
 alt + shift + F4
 	scrot
 
 ### Standard Progs ###
 
-alt + m
-	st -e neomutt
 alt + w
 	brave
+alt + t
+	st -e tremc
+alt + m
+	st -e neomutt
 alt + f
 	pcmanfm
 alt + l

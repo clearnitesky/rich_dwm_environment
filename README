@@ -1,3 +1,24 @@
+Version 0.2:
+
+Began version numbering, which is really quite arbitrary, but at least allows others 
+to see how my thoughts are changing.
+
+The fullscreen button is a toggle. In switching to it from monocle it feels useless
+as I could just switch the bar off instead. Still, my desired solution is to stop 
+using monocle rather than to stop using fullscreen so I am changing the default gaps
+to 0. This means that if only one program is open then it is effectively full-desktop.
+You can then use Mod+x or Mod+y to adjust gaps when you open muliple tiled windows if
+desired. Otherwise we just use the tiled mode to cover 2 of the needed layouts and 
+keep the fullscreen as a toggle for use when watching videos or like a distraction-
+free mode as such. 
+
+Monocle mode is disabled in config.h it can be reinstated easily, but note that it
+does not currently have a unique short-cut.
+
+Fullscreen mode now has the shortcut Mod+=
+
+Version 0.1:
+
 Patches installed:
 1 fullgaps 
 	- need to use version 6.2, not latest
