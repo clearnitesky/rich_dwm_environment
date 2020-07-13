@@ -26,7 +26,8 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "🗑" };
 
 static const Rule rules[] = {
 	/* class    instance  title  tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",   NULL,     NULL,  1 << 4,    1,          0,          0,         -1 }, };
+	{ "Gimp",   NULL,     NULL,  1 << 4,    1,          0,          0,         -1 },
+	{ "st",	    NULL,     NULL,  0,		0,	    1, 		1,	   -1 }, };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -37,8 +38,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "🤖",      tile },    /* first layout is default */ 
 	{ "👻",      NULL },    /* no layout function means floating behavior */
-	{ "👽",      monocle }, 
-};
+	{ "👽",      monocle }, };
 
 /* key definitions */
 #define MODKEY Mod4Mask
