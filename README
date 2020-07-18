@@ -1,3 +1,7 @@
+I just added the hide-vacant-tags patch to the list. I've also adjusted the colours
+a little and added JoyPixels to the *fonts in config.h
+JoyPixels is now a dependency so make sure you install it.
+
 Version 0.2:
 
 Began version numbering, which is really quite arbitrary, but at least allows others 
