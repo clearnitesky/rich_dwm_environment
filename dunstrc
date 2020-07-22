@@ -1,0 +1,13 @@
+[global]
+ monitor = 0
+ follow = keyboard
+ geometry = "350x10-0+16"
+ indicate_hidden = false
+ shrink = yes
+ notfification_height = 0
+ separator_height = 2
+ horizontal_padding = 8
+ frame_width = 3
+ frame_color = "#eeeeee"
+ font = Lato Heavy 10
+ transparency = 10

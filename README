@@ -1,6 +1,6 @@
 There are now two config.h files. One called config.dark.h and the other
 config.light.h. Before compiling you will need to choose whether you'd like to use
-the light or dark look. The work nicely with Breeze and Breeze dark themes.
+the light or dark look. They work nicely with Breeze and Breeze dark themes.
 Rename or copy the file of choice to config.h before compile.
 
 I just added the hide-vacant-tags patch to the list. I've also adjusted the colours
