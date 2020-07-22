@@ -25,6 +25,8 @@ alt + shift + F4
 
 alt + w
 	brave
+alt + r
+	st -e ranger
 alt + t
 	st -e tremc
 alt + m
