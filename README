@@ -1,20 +1,25 @@
+There are now two config.h files. One called config.dark.h and the other
+config.light.h. Before compiling you will need to choose whether you'd like to use
+the light or dark look. The work nicely with Breeze and Breeze dark themes.
+Rename or copy the file of choice to config.h before compile.
+
 I just added the hide-vacant-tags patch to the list. I've also adjusted the colours
 a little and added JoyPixels to the *fonts in config.h
 JoyPixels is now a dependency so make sure you install it.
 
 Version 0.2:
 
-Began version numbering, which is really quite arbitrary, but at least allows others 
+Began version numbering, which is really quite arbitrary, but at least allows others
 to see how my thoughts are changing.
 
 The fullscreen button is a toggle. In switching to it from monocle it feels useless
-as I could just switch the bar off instead. Still, my desired solution is to stop 
+as I could just switch the bar off instead. Still, my desired solution is to stop
 using monocle rather than to stop using fullscreen so I am changing the default gaps
 to 0. This means that if only one program is open then it is effectively full-desktop.
 You can then use Mod+x or Mod+y to adjust gaps when you open muliple tiled windows if
-desired. Otherwise we just use the tiled mode to cover 2 of the needed layouts and 
+desired. Otherwise we just use the tiled mode to cover 2 of the needed layouts and
 keep the fullscreen as a toggle for use when watching videos or like a distraction-
-free mode as such. 
+free mode as such.
 
 Monocle mode is disabled in config.h it can be reinstated easily, but note that it
 does not currently have a unique short-cut.
@@ -24,9 +29,9 @@ Fullscreen mode now has the shortcut Mod+=
 Version 0.1:
 
 Patches installed:
-1 fullgaps 
+1 fullgaps
 	- need to use version 6.2, not latest
-2 fullscreen 
+2 fullscreen
 	- manually add one line to dwm.c
   	- also add line to config.h
 3 fakefullscreen - this is cool for watching tutorials or whatever whilst multitasking
@@ -34,7 +39,7 @@ Patches installed:
 4 swallow - a handy way of managing redundant terminal windows
 
 may add the noborders patch at some point if I decide to use brighter border colour.
-noborders, fakefullscreen patches interfere with each other a bit when using the 
+noborders, fakefullscreen patches interfere with each other a bit when using the
 fullscreen patch!
 
 removed barpadding patch - it is quite visually appealing
@@ -54,16 +59,21 @@ Four needed layouts - tile, float, full desktop (monacle), full screen.
 There is no minimise function for windows in dwm so I have Tag 9 as the 🗑 icon
 and put things there when I'm not using them.
 
-You might think there is no "window list" or a way to see what programs are 
-running but really you can just Mod+0 to display all tags at once - this is 
-like reveal or whatever its called on a Mac. Also you can just look at the 
+You might think there is no "window list" or a way to see what programs are
+running but really you can just Mod+0 to display all tags at once - this is
+like reveal or whatever its called on a Mac. Also you can just look at the
 tags and see if there are windows open.
 
 Colours:
 This is something I change fairly frequently but something I like to do is have
 the border colour of the active window the same as the sel-colour on the bar/panel.
-This has the nice effect of making the border "join" to the bar and tag when in 
+This has the nice effect of making the border "join" to the bar and tag when in
 monacle mode.
+
+Fonts: I like the Lato and Inconsolata fonts for desktop and st terminal.
+Currently the latest version of Inconsolata does not work so you need to install
+version 0.2 and blacklist from upgrades. You also need JoyPixels installed for
+the emojis and libXft-bgra.
 
 Re-assess keyboard short-cuts:
 Starting programs and window controls should be assigned to different Mod keys.
