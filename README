@@ -1,3 +1,5 @@
+Version 0.21:
+
 There are now two config.h files. One called config.dark.h and the other
 config.light.h. Before compiling you will need to choose whether you'd like to use
 the light or dark look. They work nicely with Breeze and Breeze dark themes.
@@ -22,9 +24,10 @@ keep the fullscreen as a toggle for use when watching videos or like a distracti
 free mode as such.
 
 Monocle mode is disabled in config.h it can be reinstated easily, but note that it
-does not currently have a unique short-cut.
+does not currently have a unique short-cut. You can go to monocle mode, if you really
+have to, by toggling fullscreen and then turning the bar back on (Mod+B).
 
-Fullscreen mode now has the shortcut Mod+=
+Fullscreen mode (toggle) now has the shortcut Mod+=
 
 Version 0.1:
 
@@ -85,8 +88,8 @@ st	- Mod+Enter
 Desktop layouts:
 Tile		- Mod+Minus
 Float		- Mod+Shift+Minus
-Monacle		- Mod+Plus
-Fullscreen	- Mod+Shift+Plus
+Monacle		- Mod+Plus (currently disabled)
+Fullscreen	- Mod+Shift+Plus (this is a toggle)
 
 increase gaps	- Mod+x
 decrease gaps	- Mod+z
@@ -99,6 +102,7 @@ Standard Progs:
 neomutt		- Alt+ m
 brave		- Alt+ w
 pcmanfm		- Alt+ f
+ranger		- Alt+ r
 frescobaldi	- Alt+ l
 liferea		- Alt+ n
 
