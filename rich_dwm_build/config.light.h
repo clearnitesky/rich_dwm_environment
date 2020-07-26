@@ -1,13 +1,11 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 10;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int gappx		    = 0; 	/* set default gaps */
-static const int vertpad	    = 0;	/* vertical bar padding */
-static const int sidepad	    = 0;	/* horizontal bar padding */
+static const int gappx		    = 8; 	/* set default gaps */
 static const int swallowfloating    = 0;	/* 1 means swallow floating by default */
 static const char *fonts[]	    = { "Lato Heavy:size=10:antialias=true:autohin=true", "JoyPixels:pixelsize=11:antialias=true:autohint=true" };
 static const char dmenufont[]	    = "Lato Heavy:size=10:antialias=tue:autohint=true";

@@ -1,15 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 10;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int gappx		    = 0; 	/* set default gaps */
-static const int vertpad	    = 0;	/* vertical bar padding */
-static const int sidepad	    = 0;	/* horizontal bar padding */
+static const int gappx		    = 8; 	/* set default gaps */
 static const int swallowfloating    = 0;	/* 1 means swallow floating by default */
-static const char *fonts[]	    = { "Lato:size=11", "JoyPixels:pixelsize=11:antialias=true:autohint=true" };
+static const char *fonts[]	    = { "Lato:size=11:antialias=true:autohint=true", 
+					"JoyPixels:pixelsize=11:antialias=true:autohint=true" };
 static const char dmenufont[]	    = "Lato:size=11";
 static const char col_gray0[]	    = "#303030";
 static const char col_gray1[]       = "#161616";
