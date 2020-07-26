@@ -33,6 +33,8 @@ alt + m
 	st -e neomutt
 alt + f
 	pcmanfm
+alt + g
+	gointernet
 alt + l
 	frescobaldi
 alt + n

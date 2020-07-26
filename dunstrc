@@ -1,13 +1,25 @@
 [global]
- monitor = 0
- follow = keyboard
- geometry = "350x10-0+16"
- indicate_hidden = false
- shrink = yes
- notfification_height = 0
- separator_height = 2
- horizontal_padding = 8
- frame_width = 3
- frame_color = "#eeeeee"
- font = Lato Heavy 10
- transparency = 10
+  monitor = 0
+  follow = keyboard
+  geometry = "350x10-4+24"
+  indicate_hidden = false
+  shrink = yes
+  notfification_height = 0
+  separator_height = 2
+  horizontal_padding = 8
+  frame_width = 4
+  frame_color = "#161616"
+  font = Lato 11
+# transparency = 10
+
+[urgency_low]
+  background = "#315683"
+  foreground = "#333333"
+
+[urgency_normal]
+  background = "#161616"
+  foreground = "#ffdd00"
+
+[urgency_critical]
+  background = "#ee0000"
+  foreground = "#ffffff"
