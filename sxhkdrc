@@ -15,11 +15,15 @@ alt + shift + a
 alt + shift + s
 	st -e sudo wavemon
 alt + shift + c
-	clipmenu -sf \#303030 -sb \#ffcc00
+	clipmenu -sf \#161616 -sb \#eeeeee
 alt + shift + m
 	notify-send "Checking for mail." -t 1500; mbsync -a
 alt + shift + F4
 	scrot
+alt + shift + p
+	st
+alt + shift + space
+	dmenu_run
 
 ### Standard Progs ###
 
@@ -39,6 +43,18 @@ alt + l
 	frescobaldi
 alt + n
 	liferea
+alt + c
+	notify-send "$(py_crypto_check)"
+alt + F5
+	record
+alt + F6
+	killall ffmpeg; notify-send "Recording ended"
+
+
+### STATUS ###
+alt + s
+	 notify-send "Time: ⏰ $(date +'%H:%M')"; notify-send "Date:  📅 $(date +'%B %d, %Y')"; notify-send "Power:  $(powercheck)"; notify-send "Sound:  $(soundcheck)"; notify-send "Net:  $(netstatus)"
+
 
 ### HOT KEYS ETC ###
 

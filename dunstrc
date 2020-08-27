@@ -1,15 +1,16 @@
 [global]
   monitor = 0
   follow = keyboard
-  geometry = "350x10-4+24"
+# geometry = "350x10-4+24"
+  geometry = "350x16-8+8"
   indicate_hidden = false
   shrink = yes
   notfification_height = 0
-  separator_height = 2
+  separator_height = 0
   horizontal_padding = 8
-  frame_width = 4
-  frame_color = "#161616"
-  font = Lato 11
+  frame_width = 1
+  frame_color = "#eeeeee"
+  font = Lato Heavy 10
 # transparency = 10
 
 [urgency_low]
@@ -17,8 +18,8 @@
   foreground = "#333333"
 
 [urgency_normal]
-  background = "#161616"
-  foreground = "#ffdd00"
+  background = "#282A36"
+  foreground = "#eeeeee"
 
 [urgency_critical]
   background = "#ee0000"
