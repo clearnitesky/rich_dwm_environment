@@ -8,8 +8,8 @@ echo "$volstat" | grep "\[off\]" > /dev/null && mute="1"
 #echo $mute$vol%
 
 if [ "$vol" -gt 0 ] && [ "$vol" -lt 32 ]; then volicon=" 🔈"; fi
-if [ "$vol" -gt 31 ] && [ "$vol" -lt 66 ]; then volicon=" 🔉 "; fi
-if [ "$vol" -gt 65 ]; then volicon=" 🔊 "; fi
-if [ "$mute" = "1" ]; then volicon=" 🔇 "; fi
+if [ "$vol" -gt 31 ] && [ "$vol" -lt 66 ]; then volicon=" 🔉"; fi
+if [ "$vol" -gt 65 ]; then volicon=" 🔊"; fi
+if [ "$mute" = "1" ]; then volicon=" 🔇"; fi
 
 echo $volicon $vol%

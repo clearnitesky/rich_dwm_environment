@@ -3,6 +3,7 @@
 sitelist="
 DuckDuckGo Search 	https://duckduckgo.com/
 YouTube 		https://youtube.com/
+Netflix			https://netflix.com/
 Facebook 		https://facebook.com/
 Wikipedia 		https://en.wikipedia.org/
 Udemy			https://udemy.com/
@@ -11,11 +12,9 @@ Google Calendar		https://calendar.google.com/
 Messenger 		https://messenger.com/
 WhatsApp		https://web.whatsapp.com/
 Suckless 		https://suckless.org/
-Github (clearnitesky)	https://github.com/clearnitesky/
-Github (openArbanProject) 	https://github.com/openarbanproject
 Trumpet Planet Admin	https://trumpetpla.net/wp-admin
 TCE-UK Admin		http://tonguecontrolled.info/wp-admin
 openArban Admin		http://openarban.wordpress.com/wp-admin
 "
 
-echo "$sitelist" | grep -P "^$(echo "$sitelist" | grep "http" | sed 's/\t.*//g' | dmenu -i -p "Which site do you want?" -l 20 | awk '{print $1}')\s" | sed 's/.*\t//' | xargs -r surf -g
+echo "$sitelist" | grep -P "^$(echo "$sitelist" | grep "http" | sed 's/\t.*//g' | dmenu -i -p "Which site do you want?" -l 20 | awk '{print $1}')\s" | sed 's/.*\t//' | xargs -r brave

@@ -10,8 +10,9 @@
   horizontal_padding = 8
   frame_width = 1
   frame_color = "#eeeeee"
-  font = Lato Heavy 10
-# transparency = 10
+# font = Lato Heavy 10
+  font = Monospace 10
+  transparency = 10
 
 [urgency_low]
   background = "#315683"

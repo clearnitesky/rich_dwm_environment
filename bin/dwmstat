@@ -7,11 +7,11 @@ sec=$(date +%S | cut -b 1)
 
 soundcheck=$(~/bin/soundcheck)
 powercheck=$(~/bin/powercheck)
-# netstatus=$(~/bin/netstatus)
-date="$(date +'%B %d, %Y')"
+netstatus=$(~/bin/netstatus)
+date="$(date +'%d %B %Y')"
 stime="$(date +'%H:%M ')"
 
-xsetroot -name "  $soundcheck $powercheck  📆 $date ⏰ $stime" 2>> ~/.dwmstat_errors.log
+xsetroot -name "  $netstatus  $powercheck  $soundcheck  📆 $date  ⏰ $stime" 2>> ~/.dwmstat_errors.log
 
 until [ $sec = "0" ];
 do

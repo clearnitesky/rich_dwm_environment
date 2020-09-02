@@ -42,7 +42,7 @@ alt + g
 alt + l
 	frescobaldi
 alt + n
-	liferea
+	simplenote
 alt + c
 	notify-send "$(py_crypto_check)"
 alt + F5

@@ -1,0 +1,35 @@
+#!/usr/bin/python
+import time
+import requests
+
+time = time.localtime()
+hour = time.tm_hour
+
+lastcheck = open('/home/rich/.coinprice/lastcheck', 'r')
+lc_hour = float(lastcheck.readline())
+lastcheck.close()
+
+def get_price(type):
+    if lc_hour == hour:
+#       print("no update required")
+        coin = open("/home/rich/.coinprice/{}".format(type), 'r')
+        coin_price = float(coin.readline())
+        coin.close()
+    else:
+#       print("fetching updated information")
+        coin = requests.get("http://gbp.rate.sx/1{}".format(type))
+        coin_price = float(coin.text)
+        out = open('/home/rich/.coinprice/{}'.format(type), 'w')
+        out.write(coin.text)
+        out.close()
+    return coin_price
+
+def update_lastcheck():
+    new_val = open('/home/rich/.coinprice/lastcheck', 'w')
+    new_val.write("{}".format(str(hour)))
+    new_val.close()
+
+print("BTC = £%.2f" % get_price("btc"))
+print("ETH = £%.2f" % get_price("eth"))
+print("BAT = £%.2f" % get_price("bat"))
+update_lastcheck()

@@ -2,23 +2,25 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 10;       /* snap pixel */
+static const unsigned int snap      = 16;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int gappx		    = 0; 	/* set default gaps */
+static const int gappx		    = 16; 	/* set default gaps */
 static const int swallowfloating    = 0;	/* 1 means swallow floating by default */
-static const char *fonts[]	    = { "Lato Heavy:size=10:antialias=true:autohin=true", "JoyPixels:pixelsize=11:antialias=true:autohint=true" };
-static const char dmenufont[]	    = "Lato Heavy:size=10:antialias=tue:autohint=true";
+static const char *fonts[]	    = { "Inconsolata:size=11:antialias=true:autohint=true", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+static const char dmenufont[]	    = "Inconsolata:size=11:antialias=true:autohint=true";
+static const char col_white[]	    = "#ffffff";
+static const char col_ltgrey[]	    = "#eeeeee";
 static const char col_grey0[]	    = "#303030";
 static const char col_grey1[]       = "#161616";
+static const char col_black[]	    = "#000000";
 static const char col_termblu[]	    = "#282A36";
-static const char col_yelloo[]	    = "#ffcc00";
-static const char col_haiku[]	    = "#315683";
-static const char col_ltgrey[]	    = "#eeeeee";
+/* static const char col_yelloo[]   = "#ffcc00";
+   static const char col_haiku[]    = "#315683"; */
 static const char *colors[][3]      = {
-	/*               bar text,     bar color,   win border */
-	[SchemeNorm] = { col_ltgrey, col_termblu, col_termblu },
-	[SchemeSel]  = { col_grey1, col_ltgrey, col_grey1 }, };
+/*                       bar text,  bar color,   win border */
+	[SchemeNorm] = { col_white, col_termblu, col_termblu },
+	[SchemeSel]  = { col_black, col_ltgrey,  col_grey1 }, };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "🗑" };
@@ -26,6 +28,7 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "🗑" };
 static const Rule rules[] = {
 	/* class    instance  title  tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",   NULL,     NULL,  1 << 4,    1,          0,          0,         -1 },
+	{ "Zoom",   NULL,     NULL,  0,		1,	    0,	        0,         -1 },
 	{ "st",	    NULL,     NULL,  0,		0,	    1, 		1,	   -1 }, };
 
 /* layout(s) */
@@ -49,7 +52,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_termblu, "-nf", col_ltgrey, "-sb", col_ltgrey, "-sf", col_termblu, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_termblu, "-nf", col_white, "-sb", col_ltgrey, "-sf", col_black, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
@@ -86,6 +89,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,	    XK_minus,  	setgaps,	{.i = 18 } }, */
 
 	{ MODKEY|ShiftMask,         XK_c,     	killclient,     {0} },
+	{ MODKEY,		    XK_q,	killclient,	{0} },
 	{ MODKEY|ShiftMask,         XK_q,       quit,           {0} },
 
 	TAGKEYS( XK_1, 0)

@@ -5,14 +5,8 @@ bat=$(cat /sys/class/power_supply/BAT0/capacity)
 plug=$(cat /sys/class/power_supply/AC0/online)
 
 if [ $plug = "1" ]; then
-   cbl=" ⚡"
-else cbl=" 🔋 "
+   cbl="⚡"
+else cbl="🔋"
 fi
 
 echo $cbl $bat%
-
-
-#if [ $bat = "35" ]; then
-#   notify-send "WARNING:" "Battery Low!" -t 10000
-#   play ~/.config/pop.ogg
-#fi
