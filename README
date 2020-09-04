@@ -1,4 +1,20 @@
+Updates to this file are added to the top.
+New users should read through each version from the bottom to understand
+functionality and changes I've made since writing about this build on my
+website.
+
 Version 0.21:
+
+I didn't include these below:
+
+Toggle main window		- Mod+Shift+Enter
+Toggle window float 		- Mod+Shift+Space
+Increase size of main window 	- Mod+ l
+Decrease size of main window 	- Mod+ h
+Close window			- Mod+ q
+Close window (to be removed) 	- Mod+Shift+ c
+
+Quit dwm			- Mod+ q
 
 There are now two config.h files. One called config.dark.h and the other
 config.light.h. Before compiling you will need to choose whether you'd like to use
@@ -27,7 +43,7 @@ Monocle mode is disabled in config.h it can be reinstated easily, but note that 
 does not currently have a unique short-cut. You can go to monocle mode, if you really
 have to, by toggling fullscreen and then turning the bar back on (Mod+B).
 
-Fullscreen mode (toggle) now has the shortcut Mod+=
+Fullscreen mode (toggle) now has the shortcut Mod+Plus
 
 Version 0.1:
 
@@ -88,11 +104,11 @@ st	- Mod+Enter
 Desktop layouts:
 Tile		- Mod+Minus
 Float		- Mod+Shift+Minus
-Monacle		- Mod+Plus (currently disabled)
+Monacle		- Mod+Plus
 Fullscreen	- Mod+Shift+Plus (this is a toggle)
 
-increase gaps	- Mod+x
-decrease gaps	- Mod+z
+increase gaps	- Mod+ x
+decrease gaps	- Mod+ z
 
 For launching programs:
 Lower case letters for everyday things like browser or file manager
