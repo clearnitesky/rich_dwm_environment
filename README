@@ -3,6 +3,10 @@ New users should read through each version from the bottom to understand
 functionality and changes I've made since writing about this build on my
 website.
 
+Version 0.22:
+I have added the shiftview functionality and bound it to mouse buttons 4 and 5.
+This means that you can now use the scroll wheel on the tag area to change tags.
+
 Version 0.21:
 
 I didn't include these below:
