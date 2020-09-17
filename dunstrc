@@ -2,7 +2,8 @@
   monitor = 0
   follow = keyboard
 # geometry = "350x10-4+24"
-  geometry = "350x16-8+8"
+# geometry = "350x16-8+8"
+  geometry = "350x16-8-24"
   indicate_hidden = false
   shrink = yes
   notfification_height = 0

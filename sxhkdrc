@@ -38,7 +38,7 @@ alt + m
 alt + f
 	pcmanfm
 alt + g
-	gointernet
+	dmenu-lpass
 alt + l
 	frescobaldi
 alt + n
@@ -53,7 +53,7 @@ alt + F6
 
 ### STATUS ###
 alt + s
-	 notify-send "Time: ⏰ $(date +'%H:%M')"; notify-send "Date:  📅 $(date +'%B %d, %Y')"; notify-send "Power:  $(powercheck)"; notify-send "Sound:  $(soundcheck)"; notify-send "Net:  $(netstatus)"
+	 notify-send "Time: ⏰ $(date +'%H:%M')"; notify-send "Date: 📅 $(date +'%B %d, %Y')"; notify-send "Power:$(powercheck)"; notify-send "Sound:$(soundcheck)"; notify-send "Net:  $(netstatus)"
 
 
 ### HOT KEYS ETC ###

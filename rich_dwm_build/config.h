@@ -19,8 +19,8 @@ static const char col_termblu[]	    = "#282A36";
    static const char col_haiku[]    = "#315683"; */
 static const char *colors[][3]      = {
 /*                       bar text,  bar color,   win border */
-	[SchemeNorm] = { col_white, col_termblu, col_termblu },
-	[SchemeSel]  = { col_black, col_ltgrey,  col_grey1 }, };
+	[SchemeNorm] = { col_ltgrey, col_termblu, col_termblu },
+	[SchemeSel]  = { col_white, col_termblu,  col_termblu }, };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "🗑" };
@@ -28,8 +28,7 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "🗑" };
 static const Rule rules[] = {
 	/* class    instance  title  tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",   NULL,     NULL,  1 << 4,    1,          0,          0,         -1 },
-	{ "Zoom",   NULL,     NULL,  0,		1,	    0,	        0,         -1 },
-	{ "st",	    NULL,     NULL,  0,		0,	    1, 		1,	   -1 }, };
+	{ "st",	    NULL,     NULL,  0,		0,	    1, 		0,	   -1 }, };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -55,6 +54,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_termblu, "-nf", col_white, "-sb", col_ltgrey, "-sf", col_black, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
+#include "shiftview.c"
 static Key keys[] = {
 	/* modifier                 key        function        argument */
 	{ MODKEY,                   XK_space,  	spawn,          {.v = dmenucmd } },
@@ -116,4 +116,6 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} }, };
+	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkTagBar,		0,		Button4,	shiftview,      {.i = +1} },
+	{ ClkTagBar,		0,		Button5,	shiftview,	{.i = -1} }, };
