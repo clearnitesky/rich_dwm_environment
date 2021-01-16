@@ -43,8 +43,6 @@ alt + l
 	frescobaldi
 alt + n
 	simplenote
-alt + c
-	notify-send "$(py_crypto_check)"
 alt + F5
 	record
 alt + F6
@@ -54,7 +52,8 @@ alt + F6
 ### STATUS ###
 alt + s
 	notify-send "Time: ⏰ $(date +'%H:%M')"; notify-send "Date: 📅 $(date +'%B %d, %Y')"; notify-send "Power:$(powercheck)"; notify-send "Sound:$(soundcheck)"; notify-send "Netwk:$(netstatus)"
-
+alt + b
+	notify-send "$(py_crypto_check)"
 
 ### HOT KEYS ETC ###
 
@@ -73,7 +72,7 @@ XF86MonBrightnessUp
 # AUDIO KEYS
 
 XF86AudioMute
-	amixer sset Master toggle; notify-send "🔇 Mute" -t 750; rsbar
+	amixer sset Master toggle; notify-send "$(soundcheck)" -t 750; rsbar
 XF86Audio{Raise,Lower}Volume
 	amixer sset Master 5%{+,-}; notify-send "$(soundcheck)" -t 750; rsbar
 

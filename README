@@ -3,6 +3,35 @@ New users should read through each version from the bottom to understand
 functionality and changes I've made since writing about this build on my
 website.
 
+Version 0.3:
+I've decided that the fakefullscreen patch causes more trouble than it's worth.
+Although I like to have a youtube video playing in one window, filling that window,
+and at the same time be editing files or typing, this alone does not justify the need
+for keeping the pointless monocle layout available and having another awkward patch
+to make fullscreen actually happen when I do want it. Plus the fullscreen workaround
+still keeps the window border and when I used the noborder patch it didn't always work.
+This is just messy and unneccessary. If I want to do as I describe above with a
+youtube video then I can simply use mpv to play it.
+
+So here's a summary from the last months. I have come to realise that my custom key
+binds, dunst configuration, and status bar scripts are of more value than a heavily
+patched dwm. I went back to a vanilla dwm for a while and over time added things back
+in as I missed them.
+
+At the moment the current patches I have for dwm are:
+1) Window swallowing.
+2) Window gaps ("fullgaps") (which by default are set to 0 and only activated when the
+   colour scheme makes destinguishing between two open terminals difficult. I actually
+   went some time without using gaps at all because it's mostly eye-candy and goes
+   against the spirit of this desktop set-up.
+3) Shiftview, for changing tags with the mouse.
+
+I did use the "hide-vacant-tags" patch for a while but I've also back-pedalled on that
+as well. This is because I use tag 9 as a "[ 🗑 ]"
+
+Current colour scheme has the select colour the same as the dracula colour scheme for
+st, which I think looks quite classy when using a single maximised terminal.
+
 Version 0.22:
 I have added the shiftview functionality and bound it to mouse buttons 4 and 5.
 This means that you can now use the scroll wheel on the tag area to change tags.
