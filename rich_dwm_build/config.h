@@ -61,7 +61,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 				"-nb", col_dkgrey, "-nf", col_ltgrey,
-				"-sb", col_newblu, "-sf", col_black, NULL };
+				"-sb", col_termblu, "-sf", col_ltgrey, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include "shiftview.c"
