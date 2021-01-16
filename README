@@ -32,6 +32,11 @@ as well. This is because I use tag 9 as a "[ 🗑 ]"
 Current colour scheme has the select colour the same as the dracula colour scheme for
 st, which I think looks quite classy when using a single maximised terminal.
 
+Light colour scheme config file has been removed. If you understand what's going on here
+then you can surely set that up yourself - make the normal and selected colours the same
+to get a solid bar and choose an off-white colour (and a dark font). In the light theme
+I had also made the font "Lato Bold:size=9".
+
 Version 0.22:
 I have added the shiftview functionality and bound it to mouse buttons 4 and 5.
 This means that you can now use the scroll wheel on the tag area to change tags.
