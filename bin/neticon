@@ -1,0 +1,17 @@
+#!/bin/bash
+
+ethup=$(cat /sys/class/net/enp2s0f1/operstate)
+wifiup=$(cat /sys/class/net/wlp3s0/operstate)
+
+if [ $ethup = "up" ]; then
+   nettype=" 🌐 "
+        ip=$(/sbin/ip -o -4 addr list enp2s0f1 | awk '{print $4}' | cut -d/ -f1)
+elif [ $wifiup = "up" ]; then
+   nettype=" 📡 "
+        ip=$(/sbin/ip -o -4 addr list wlp3s0 | awk '{print $4}' | cut -d/ -f1)
+else
+   nettype=" 🏚 "
+        ip="127.0.0.1"
+fi
+
+echo $nettype

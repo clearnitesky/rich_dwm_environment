@@ -1,0 +1,26 @@
+#!/bin/sh
+
+getprices() {
+	lastcheck=$(cat ~/.coinprice/lastcheck)
+	hour=$(date +%H)
+
+	if [ $lastcheck = $hour ];
+	then
+	    return
+	else
+	    btcprice=$(curl -s gbp.rate.sx/1btc | cut -c 1,2,3,4,5,6,7 > ~/.coinprice/btc)
+	    ethprice=$(curl -s gbp.rate.sx/1eth | cut -c 1,2,3,4,5,6 > ~/.coinprice/eth)
+	    batprice=$(curl -s gbp.rate.sx/1bat | cut -c 1,2,3,4 > ~/.coinprice/bat)
+	    echo $hour > ~/.coinprice/lastcheck
+	fi
+}
+
+readprices() {
+	curbtc=$(cat ~/.coinprice/btc)
+	cureth=$(cat ~/.coinprice/eth)
+	curbat=$(cat ~/.coinprice/bat)
+}
+
+getprices
+readprices
+echo "BTC= £$curbtc  ETH= £$cureth  BAT= £$curbat"

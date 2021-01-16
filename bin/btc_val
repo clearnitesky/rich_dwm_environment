@@ -1,0 +1,8 @@
+#!/usr/bin/python
+with open("~/.coinprice/prices", 'r') as prices:
+    lines[] = prices.readlines()
+
+print lines
+
+def getprices():
+    btcprice = prices.readlines()
