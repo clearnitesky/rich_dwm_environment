@@ -1,0 +1,9 @@
+#!/bin/sh
+
+which=$(echo "" | dmenu -p "Which video card would you like to use? ")
+notify-send "Switching to $which card in 2 seconds..."
+sleep 2s
+optimus-manager --no-confirm --switch $which
+killall dwm
+sleep 3s
+sudo prime-switch

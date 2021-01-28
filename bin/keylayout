@@ -1,0 +1,13 @@
+#!/bin/sh
+
+layout=~/.local/keymap
+
+if [ layout = "us" ]; then
+	icon = "🇺🇸"
+elif [ layout = "gb" ]; then
+	icon = "🇬🇧"
+elif [ layout = "es" ]; then
+	icon = "🇪🇸"
+fi
+
+echo $icon
