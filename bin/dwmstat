@@ -5,13 +5,14 @@ do
 
 sec=$(date +%S | cut -b 1)
 
+keylayout=$(~/.local/bin/keyicon)
 soundcheck=$(~/.local/bin/volicon)
 powercheck=$(~/.local/bin/powericon)
 netstatus=$(~/.local/bin/neticon)
-#date="$(date +'%d %Bi %Y')"
+date="$(date +'%d %B %Y')"
 stime="$(date +'%H:%M')"
 
-xsetroot -name " [ $powercheck $soundcheck $netstatus ]  [ $stime ] "
+xsetroot -name " [ $stime ]  [ $date ]  [ $keylayout $powercheck $soundcheck $netstatus ]  [ richcolq.xyz dwm build 0.3 ] "
 
 until [ $sec = "0" ];
 do

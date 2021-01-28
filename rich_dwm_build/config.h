@@ -1,30 +1,28 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
-static const int swallowfloating    = 1;	/* swallowing on */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const int swallowfloating    = 1;	/* swallowing on for floating windows */
 static const int gappx		    = 0;	/* initial window gaps */
 static const unsigned int snap      = 10;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+
 static const char *fonts[]	    = { "JetBrainsMono-Regular:size=9:antialias=true:autohint=true",
 					"JoyPixels:pixelsize=9:antialias=true:autohint=true" };
 static const char dmenufont[]	    = "JetBrainsMono-Regular:size=9:antialias=true:autohint=true";
-static const char col_white[]	    = "#ffffff";
-static const char col_ltgrey[]	    = "#eeeeee";
-static const char col_dkgrey[]	    = "#111111";
-static const char col_black[]	    = "#000000";
-static const char col_termblu[]	    = "#282A36";
-static const char col_newblu[]      = "#6666ee";
-static const char col_dkgreen[]	    = "#006600";
-static const char col_yelloo[]	    = "#ffcc00";
+
+static const char col_themecol[]    = "#047BFF";
+static const char col_themecol2[]    = "#151515";
+
 static const char *colors[][3]      = {
+
 /*                       bar text,  bar color,   win border */
-	[SchemeNorm] = { col_ltgrey, col_dkgrey, col_termblu },
-	[SchemeSel]  = { col_white, col_termblu,  col_termblu }, };
+	[SchemeNorm] = { col_themecol, col_themecol2, col_themecol2 },
+	[SchemeSel]  = { col_themecol2, col_themecol,  col_themecol }, };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "[ 🗑 ]" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "[ 🗑 ]" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -32,11 +30,16 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance  title  tags mask  isfloating  isterminal  noswallow  monitor */
-/*	{ "Gimp",     NULL,     NULL,  0,         1,          0,          0,         -1 }, */
-	{ "st",	      NULL,     NULL,  0,         0,          1,          0,         -1 }, };
+/*	{ "Gimp",     NULL,     NULL,  0,         1,          0,          0,         -1 },
+	{ "brave-browser", NULL, NULL, 1 >> 2,    0,          0,          0,         -1 },
+	{ "Zathura",  NULL,     NULL,  1 >> 3,    0,          0,          0,         -1 },
+	{ "mpv",      NULL,     NULL,  1 >> 4,    0,          0,          0,         -1 },
+	{ "st",	      NULL,     NULL,  1 >> 0,    0,          1,         -1,         -1 }, */
+	{ NULL,       NULL,     "Event Tester",  0,    0,     0,          1,         -1 },
+};
 
 /* layout(s) */
-static const float mfact     = 0.65; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -59,9 +62,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
-				"-nb", col_dkgrey, "-nf", col_ltgrey,
-				"-sb", col_termblu, "-sf", col_ltgrey, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,
+				"-fn", dmenufont,
+				"-nb", col_themecol2, "-nf", col_themecol,
+				"-sb", col_themecol, "-sf", col_themecol2, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include "shiftview.c"
@@ -102,11 +106,11 @@ static Key keys[] = {
 	TAGKEYS( XK_2, 1)
 	TAGKEYS( XK_3, 2)
 	TAGKEYS( XK_4, 3)
-/*	TAGKEYS( XK_5, 4)
+	TAGKEYS( XK_5, 4)
 	TAGKEYS( XK_6, 5)
-	TAGKEYS( XK_7, 6)
+/*	TAGKEYS( XK_7, 6)
 	TAGKEYS( XK_8, 7)*/
-	TAGKEYS( XK_9, 4) };
+	TAGKEYS( XK_9, 6) };
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */

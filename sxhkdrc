@@ -14,6 +14,8 @@ alt + shift + a
 	st -e pulsemixer
 alt + shift + s
 	st -e sudo wavemon
+alt + shift + k
+	proc_kill
 alt + shift + c
 	clipmenu -sf \#161616 -sb \#eeeeee
 alt + shift + m
@@ -22,9 +24,12 @@ alt + shift + F4
 	scrot
 alt + shift + p
 	st
+alt + shift + o
+	optiswitch
 alt + shift + space
 	dmenu_run
-
+alt + shift + l
+	keyswitch
 ### Standard Progs ###
 
 alt + w
@@ -43,6 +48,8 @@ alt + l
 	frescobaldi
 alt + n
 	simplenote
+alt + d
+	dsearch
 alt + F5
 	record
 alt + F6

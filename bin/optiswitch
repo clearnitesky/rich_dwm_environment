@@ -1,7 +1,14 @@
 #!/bin/sh
 
 which=$(echo "" | dmenu -p "Which video card would you like to use? ")
-notify-send "Switching to $which card in 2 seconds..."
+
+if [ $which = "nvidia" ]; then
+	notify-send "Switching to $which card in 2 seconds..."
+elif [ $which = "intel" ]; then
+	notify-send "Switching to $which card in 2 seconds..."
+else notify-send " Graphics Switch Cancelled " && exit 1
+fi
+
 sleep 2s
 optimus-manager --no-confirm --switch $which
 killall dwm
