@@ -4,7 +4,7 @@ bat=$(cat /sys/class/power_supply/BAT0/capacity)
 plug=$(cat /sys/class/power_supply/AC0/online)
 
 if [ $plug = "1" ]; then
-   cbl="⚡"
+   cbl="🔌"
 else cbl="🔋"
 fi
 
