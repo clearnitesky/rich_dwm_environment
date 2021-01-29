@@ -14,4 +14,4 @@ else
         ip="127.0.0.1"
 fi
 
-echo $nettype $ip
+echo $nettype $ip > ~/.status/network

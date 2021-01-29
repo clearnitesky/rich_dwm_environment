@@ -4,20 +4,23 @@ while true
 do
 
 sec=$(date +%S | cut -b 1)
+powercheck
+soundcheck
+netstatus
 
-keylayout=$(~/.local/bin/keyicon)
-soundcheck=$(~/.local/bin/volicon)
-powercheck=$(~/.local/bin/powericon)
-netstatus=$(~/.local/bin/neticon)
+layout=$(awk '{print $1}' ~/.status/keymap)
+sound=$(awk '{print $1}' ~/.status/sound)
+power=$(awk '{print $1}' ~/.status/power)
+network=$(awk '{print $1}' ~/.status/network)
 date="$(date +'%d %B %Y')"
 stime="$(date +'%H:%M')"
 
-xsetroot -name " [ $stime ]  [ $date ]  [ $keylayout $powercheck $soundcheck $netstatus ]  [ richcolq.xyz dwm build 0.3 ] "
+xsetroot -name " [ $layout ]  [ $power $sound $network ]  [ $date ]  [ $stime ] "
 
-until [ $sec = "0" ];
-do
-   sleep 10
-   sec=$(date +%S | cut -b 1)
-done
+	until [ $sec = "0" ];
+	do
+   		sleep 10
+   		sec=$(date +%S | cut -b 1)
+	done
 
 done

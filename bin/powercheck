@@ -1,7 +1,6 @@
 #!/bin/bash
 
 bat=$(cat /sys/class/power_supply/BAT0/capacity)
-# crg=$(cat /sys/class/power_supply/BAT0/status)
 plug=$(cat /sys/class/power_supply/AC0/online)
 
 if [ $plug = "1" ]; then
@@ -9,10 +8,4 @@ if [ $plug = "1" ]; then
 else cbl="🔋"
 fi
 
-# uncomment this for disappearing feature
-#if [ $bat = "100" ]; then
-#   exit
-#else echo $cbl $bat%
-#fi
-
-echo $cbl $bat%
+echo $cbl $bat% > ~/.status/power

@@ -30,6 +30,7 @@ alt + shift + space
 	dmenu_run
 alt + shift + l
 	keyswitch
+
 ### Standard Progs ###
 
 alt + w
@@ -55,10 +56,10 @@ alt + F5
 alt + F6
 	killall ffmpeg; notify-send "Recording ended"
 
-
 ### STATUS ###
+
 alt + s
-	notify-send "Time: ⏰ $(date +'%H:%M')"; notify-send "Date: 📅 $(date +'%B %d, %Y')"; notify-send "Power:$(powercheck)"; notify-send "Sound:$(soundcheck)"; notify-send "Netwk:$(netstatus)"
+	notify-send "Time: ⏰ $(date +'%H:%M')"; notify-send "Date: 📅 $(date +'%B %d, %Y')"; notify-send "Power:$(cat ~/.status/power)"; notify-send "Sound:$(cat ~/.status/sound)"; notify-send "Netwk:$(cat ~/.status/network)"; notify-send "KeyMp:$(cat ~/.status/keymap)";
 alt + b
 	notify-send "$(py_crypto_check)"
 

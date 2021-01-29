@@ -1,21 +1,17 @@
 #!/bin/sh
 
 which=$(echo "" | dmenu -p "Select Keyboard Layout: ")
-echo "selected $which"
+# for debugging: echo "selected $which"
 
 if [ $which = "us" ]; then
-	echo "us" > ~/.local/keymap
-	flag="🇺🇸"
+	echo "🇺🇸 American" > ~/.status/keym
 elif [ $which = "gb" ]; then
-	echo "gb" > ~/.local/keymap
-	flag="🇬🇧"
+	echo "🇬🇧 British" > ~/.status/keymap
 elif [ $which = "es" ]; then
-	echo "es" > ~/.local/keymap
-	flag="🇪🇸"
+	echo "🇪🇸 Español" > ~/.status/keymap
 else notify-send " Keyboard Switch Cancelled " && exit 1
 fi
 
-notify-send " ⌨ Keyboard Layout Changed to $flag "
-# echo "Changing now"
+notify-send " Keyboard Layout Changed to $(cat ~/.status/keymap) "
 setxkbmap $which
 rsbar
