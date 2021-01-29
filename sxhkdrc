@@ -80,9 +80,9 @@ XF86MonBrightnessUp
 # AUDIO KEYS
 
 XF86AudioMute
-	amixer sset Master toggle; notify-send "$(soundcheck)" -t 750; rsbar
+	amixer sset Master toggle; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
 XF86Audio{Raise,Lower}Volume
-	amixer sset Master 5%{+,-}; notify-send "$(soundcheck)" -t 750; rsbar
+	amixer sset Master 5%{+,-}; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
 
 #XF86Audio{Next,Prev}
 #	mpc {next,prev}
