@@ -3,6 +3,39 @@ New users should read through each version from the bottom to understand
 functionality and changes I've made since writing about this build on my
 website.
 
+2nd February 2021:
+1) Over the last week I re-wrote all of the mini scripts that my status bar calls
+with a completely different functionality. Files are now written to ~/.status
+and then read either by the bar or by the status shortcut (Alt+ s) using awk
+to trim the relevant information. This has reduced the need for half of the
+scripts (which were essentially the same) and is more unix-like IMHO.
+
+2) I'm seriously considering writing a proper help PDF for users of the desktop
+in the way that Luke Smith does with LARBS.
+
+3) I'm also considering not distributing the full source code for dwm any more.
+It's quite possible that I'll revert to a totally vanilla dwm build and simply
+distribute my config.h file, status scripts and other config files (that are
+already included). It's really in the interest of simplicity... but I've also
+learned that most of these patches are more hassle than they're worth. Gaps is
+just eye candy and rarely looks as good as you may think (or I may have previously
+thought). It also introduces more complexity in the form of "do I now want drop
+shadows?"... the answer is no, because of the bar's shadow over applications when
+gaps aren't being used... again, more hassle than it's all worth.
+I already have a solution for the issue terminal swallowing is meant to
+solve (the trash tag in place of tag 9, which I add to windows I don't want to see)
+and also I often want to see the terminal output of mpv, for example, so I ended
+turning swallowing off for a lot of the things I frequently use.
+The only remaining modifications to stock dwm are shiftview and allowing coloured
+emoticons on the bar, which are easy enough to do without the need for me to be
+sharing the source as though I actually did anything myself!
+It's kind of hilarious that in some ways this project obsoleted one of its main
+purposes but I think that focusing on code that I've actually written and
+continuing to, a) write better scripts that better utilise unix-like functionality
+and b) keep evolving my opinions of what is required for a minimalist desktop that
+doesn't get in the way or bloat itself with needless features, is the best way
+forward.
+
 Version 0.3:
 I've decided that the fakefullscreen patch causes more trouble than it's worth.
 Although I like to have a youtube video playing in one window, filling that window,
@@ -20,11 +53,12 @@ in as I missed them.
 
 At the moment the current patches I have for dwm are:
 1) Window swallowing.
-2) Window gaps ("fullgaps") (which by default are set to 0 and only activated when the
-   colour scheme makes destinguishing between two open terminals difficult. I actually
-   went some time without using gaps at all because it's mostly eye-candy and goes
-   against the spirit of this desktop set-up.
-3) Shiftview, for changing tags with the mouse.
+2) Window gaps ("fullgaps") (which by default are set to 0 and manually activated (eg.
+   if the colour scheme makes destinguishing between two open terminals difficult).
+   I actually went some time without using gaps at all because it's mostly eye-candy
+   and goes against the spirit of this desktop set-up.
+3) Shiftview, for changing tags with the mouse. It's not strictly necessary and again,
+   rarely used by me, but it is a nice thing to leave in.
 
 I did use the "hide-vacant-tags" patch for a while but I've also back-pedalled on that
 as well. This is because I use tag 9 as a "[ 🗑 ]"
@@ -50,9 +84,8 @@ Toggle window float 		- Mod+Shift+Space
 Increase size of main window 	- Mod+ l
 Decrease size of main window 	- Mod+ h
 Close window			- Mod+ q
-Close window (to be removed) 	- Mod+Shift+ c
 
-Quit dwm			- Mod+ q
+Quit dwm			- Mod+Shift q
 
 There are now two config.h files. One called config.dark.h and the other
 config.light.h. Before compiling you will need to choose whether you'd like to use

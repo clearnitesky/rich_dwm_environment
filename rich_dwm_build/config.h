@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const int swallowfloating    = 1;	/* swallowing on for floating windows */
+static const int swallowfloating    = 0;	/* swallowing on for floating windows */
 static const int gappx		    = 0;	/* initial window gaps */
 static const unsigned int snap      = 10;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -29,13 +29,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance  title  tags mask  isfloating  isterminal  noswallow  monitor */
-/*	{ "Gimp",     NULL,     NULL,  0,         1,          0,          0,         -1 },
-	{ "brave-browser", NULL, NULL, 1 >> 2,    0,          0,          0,         -1 },
-	{ "Zathura",  NULL,     NULL,  1 >> 3,    0,          0,          0,         -1 },
-	{ "mpv",      NULL,     NULL,  1 >> 4,    0,          0,          0,         -1 },
-	{ "st",	      NULL,     NULL,  1 >> 0,    0,          1,         -1,         -1 }, */
-	{ NULL,       NULL,     "Event Tester",  0,    0,     0,          1,         -1 },
+	/* class         instance  title  tags mask  isfloating  isterminal  noswallow  monitor */
+/*	{ "Gimp",        NULL,     NULL,  0,         1,          0,          0,         -1 }, */
+	{ "st",	         NULL,     NULL,  0,         0,          1,         -1,         -1 },
+/*	{ "mpvfloat",    NULL,     "mpv", 0,         1,          0,          0,         -1 }, */
+	{ NULL,  "guvcview", "guvcview",  0,         1,          0,          0,         -1 },
+	{ NULL,     NULL, "Event Tester", 0,         0,          0,          1,         -1 },
 };
 
 /* layout(s) */

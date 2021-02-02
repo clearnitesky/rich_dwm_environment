@@ -18,8 +18,8 @@ alt + shift + k
 	proc_kill
 alt + shift + c
 	clipmenu -sf \#161616 -sb \#eeeeee
-alt + shift + m
-	notify-send "📧 Checking for mail..." -t 1500; mbsync -a
+#alt + shift + m
+#	notify-send "📧 Checking for mail..." -t 1500; mbsync -a
 alt + shift + F4
 	scrot
 alt + shift + p
@@ -39,8 +39,8 @@ alt + r
 	st -e ranger
 alt + t
 	st -e tremc
-alt + m
-	st -e neomutt
+#alt + m
+#	st -e neomutt
 alt + f
 	pcmanfm
 alt + g
@@ -80,7 +80,7 @@ XF86MonBrightnessUp
 # AUDIO KEYS
 
 XF86AudioMute
-	amixer sset Master toggle; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
+	amixer sset Master toggle; ~/.local/bin/soundcheck; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
 XF86Audio{Raise,Lower}Volume
 	amixer sset Master 5%{+,-}; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
 
