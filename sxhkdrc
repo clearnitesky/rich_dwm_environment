@@ -1,7 +1,6 @@
 ### PROGRAM LAUNCH ###
 
 ### Config Progs ###
-
 alt + shift + w
 	st -e nmtui
 alt + shift + t
@@ -24,7 +23,7 @@ alt + shift + F4
 	scrot
 alt + shift + p
 	st
-alt + shift + o
+super + shift + o
 	optiswitch
 alt + shift + space
 	dmenu_run
@@ -43,8 +42,6 @@ alt + t
 #	st -e neomutt
 alt + f
 	pcmanfm
-alt + g
-	dmenu-lpass
 alt + l
 	frescobaldi
 alt + n
@@ -82,7 +79,7 @@ XF86MonBrightnessUp
 XF86AudioMute
 	amixer sset Master toggle; ~/.local/bin/soundcheck; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
 XF86Audio{Raise,Lower}Volume
-	amixer sset Master 5%{+,-}; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
+	amixer sset Master 5%{+,-}; ~/.local/bin/soundcheck; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
 
 #XF86Audio{Next,Prev}
 #	mpc {next,prev}

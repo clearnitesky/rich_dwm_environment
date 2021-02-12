@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const int swallowfloating    = 0;	/* swallowing on for floating windows */
 static const int gappx		    = 0;	/* initial window gaps */
 static const unsigned int snap      = 10;       /* snap pixel */
@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 
 /*                       bar text,  bar color,   win border */
 	[SchemeNorm] = { col_themecol, col_themecol2, col_themecol2 },
-	[SchemeSel]  = { col_themecol2, col_themecol,  col_themecol }, };
+	[SchemeSel]  = { col_themecol2, col_themecol,  col_themecol2 }, };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "[ 🗑 ]" };
