@@ -56,9 +56,7 @@ alt + F6
 ### STATUS ###
 
 alt + s
-	notify-send "Time: ⏰ $(date +'%H:%M')"; notify-send "Date: 📅 $(date +'%B %d, %Y')"; notify-send "Power:$(cat ~/.status/power)"; notify-send "Sound:$(cat ~/.status/sound)"; notify-send "Netwk:$(cat ~/.status/network)"; notify-send "KeyMp:$(cat ~/.status/keymap)";
-alt + b
-	notify-send "$(py_crypto_check)"
+	new_status
 
 ### HOT KEYS ETC ###
 
@@ -77,9 +75,9 @@ XF86MonBrightnessUp
 # AUDIO KEYS
 
 XF86AudioMute
-	amixer sset Master toggle; ~/.local/bin/soundcheck; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
+	amixer sset Master toggle; ~/.local/bin/soundcheck; notify-send "$(cat ~/.status/01sound)" -t 1050; rsbar
 XF86Audio{Raise,Lower}Volume
-	amixer sset Master 5%{+,-}; ~/.local/bin/soundcheck; notify-send "$(cat ~/.status/sound)" -t 1050; rsbar
+	amixer sset Master 5%{+,-}; ~/.local/bin/soundcheck; notify-send "$(cat ~/.status/01sound)" -t 1050; rsbar
 
 #XF86Audio{Next,Prev}
 #	mpc {next,prev}

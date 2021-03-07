@@ -1,25 +1,30 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const int swallowfloating    = 0;	/* swallowing on for floating windows */
 static const int gappx		    = 0;	/* initial window gaps */
-static const unsigned int snap      = 10;       /* snap pixel */
+static const unsigned int snap      = 4;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]	    = { "JetBrainsMono-Regular:size=9:antialias=true:autohint=true",
-					"JoyPixels:size=9:antialias=true:autohint=true" };
-static const char dmenufont[]	    = "JetBrainsMono-Regular:size=9:antialias=true:autohint=true";
+static const char *fonts[]	    = { "JetBrainsMono-Regular:size=10",
+					"JoyPixels:size=10:antialias=true:autohint=true" };
+static const char dmenufont[]	    = "JetBrainsMono-Regular:size=10";
 
-static const char col_themecol[]    = "#047BFF";
-static const char col_themecol2[]    = "#151515";
+static const char col_themecol0[]    = "#bbbbbb";
+static const char col_themecol1[]    = "#eeeeee";
+static const char col_themecol2[]    = "#222222";
+static const char col_themecol3[]    = "#005577";
+static const char col_themecol4[]    = "#444444";
+static const char col_themecol5[]    = "#770000";
+
 
 static const char *colors[][3]      = {
 
 /*                       bar text,  bar color,   win border */
-	[SchemeNorm] = { col_themecol, col_themecol2, col_themecol2 },
-	[SchemeSel]  = { col_themecol2, col_themecol,  col_themecol2 }, };
+	[SchemeNorm] = { col_themecol0, col_themecol2, col_themecol4 },
+	[SchemeSel]  = { col_themecol1, col_themecol3,  col_themecol5 }, };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "[ 🗑 ]" };
@@ -63,8 +68,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,
 				"-fn", dmenufont,
-				"-nb", col_themecol2, "-nf", col_themecol,
-				"-sb", col_themecol, "-sf", col_themecol2, NULL };
+				"-nb", col_themecol2, "-nf", col_themecol0,
+				"-sb", col_themecol3, "-sf", col_themecol1, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include "shiftview.c"
