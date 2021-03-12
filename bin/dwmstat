@@ -1,21 +1,24 @@
 #!/bin/bash
 
+### Version 3 ###
+### This version uses the universal "status" script ###
+### to update all values once and then read what is ###
+### required to make the icons on the panel.        ###
+
 while true
 do
 
 sec=$(date +%S | cut -b 1)
-powercheck
-soundcheck
-netstatus
+status=$(status)
 
-layout=$(awk '{print $1}' ~/.status/keymap)
-sound=$(awk '{print $1}' ~/.status/sound)
-power=$(awk '{print $1}' ~/.status/power)
-network=$(awk '{print $1}' ~/.status/network)
-date="$(date +'%d %B %Y')"
-stime="$(date +'%H:%M')"
+stime="$(echo $status | awk '{print $3,$4}')"
+sdate="$(echo $status | awk '{print $7,$8}')"
+sound=$(echo $status | awk '{print $11}')
+power=$(echo $status | awk '{print $15}')
+network=$(echo $status | awk '{print $18}')
+weather=$(echo $status | awk '{print $25}')
 
-xsetroot -name " [ $layout ]  [ $power $sound $network ]  [ $date ]  [ $stime ] "
+xsetroot -name "  $sound  $power  $network  $weather  $sdate  $stime "; sec="1"
 
 	until [ $sec = "0" ];
 	do

@@ -12,5 +12,6 @@ fi
 sleep 2s
 optimus-manager --no-confirm --switch $which
 killall dwm
-sleep 3s
+sleep 2s
+# optimus-manager --status | awk '$1 == "Current" {print $5}' >> ~/.status/video
 sudo prime-switch

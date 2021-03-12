@@ -4,14 +4,15 @@ which=$(echo "" | dmenu -p "Select Keyboard Layout: ")
 # for debugging: echo "selected $which"
 
 if [ $which = "us" ]; then
-	echo "🇺🇸 American" > ~/.status/keym
+	echo "Keymap : 🇺🇸 American" > ~/.status/04keymap
 elif [ $which = "gb" ]; then
-	echo "🇬🇧 British" > ~/.status/keymap
+	echo "Keymap : 🇬🇧 British" > ~/.status/04keymap
 elif [ $which = "es" ]; then
-	echo "🇪🇸 Español" > ~/.status/keymap
+	echo "Keymap : 🇪🇸 Español" > ~/.status/04keymap
 else notify-send " Keyboard Switch Cancelled " && exit 1
 fi
 
-notify-send " Keyboard Layout Changed to $(cat ~/.status/keymap) "
+notify-send " UPDATED $(cat ~/.status/04keymap) "
 setxkbmap $which
+# pkill -RTMIN+14 dwmblocks
 rsbar

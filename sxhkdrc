@@ -15,12 +15,12 @@ alt + shift + s
 	st -e sudo wavemon
 alt + shift + k
 	proc_kill
-alt + shift + c
-	clipmenu -sf \#161616 -sb \#eeeeee
-#alt + shift + m
-#	notify-send "📧 Checking for mail..." -t 1500; mbsync -a
 alt + shift + F4
 	scrot
+alt + shift + F5
+	record
+alt + shift + F6
+	killall ffmpeg; notify-send "Recording ended"
 alt + shift + p
 	st
 super + shift + o
@@ -38,25 +38,21 @@ alt + r
 	st -e ranger
 alt + t
 	st -e tremc
-#alt + m
-#	st -e neomutt
+alt + d
+	dsearch
 alt + f
 	pcmanfm
 alt + l
 	frescobaldi
 alt + n
 	simplenote
-alt + d
-	dsearch
-alt + F5
-	record
-alt + F6
-	killall ffmpeg; notify-send "Recording ended"
+alt + g
+	st -e trumpetpdf
 
 ### STATUS ###
 
 alt + s
-	new_status
+	notify-send "$(status)"
 
 ### HOT KEYS ETC ###
 

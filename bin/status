@@ -1,0 +1,111 @@
+#!/bin/bash
+
+# set location of status files
+STATUSFOLDER=$HOME/.status
+LASTCHECK=$(cat $STATUSFOLDER/last_check)
+
+soundcheck () {
+	mute="0"
+	volstat=$(amixer get Master)
+	vol=$(echo "$volstat" | grep "Right" | grep -o "\[[0-9]\+%\]" | sed 's/[^0-9]*//g')
+	echo "$volstat" | grep "\[off\]" > /dev/null && mute="1"
+
+	if [ "$vol" -gt 0 ] && [ "$vol" -lt 32 ]; then volicon="🔈"; fi
+	if [ "$vol" -gt 31 ] && [ "$vol" -lt 66 ]; then volicon="🔉"; fi
+	if [ "$vol" -gt 65 ]; then volicon="🔊"; fi
+	if [ "$mute" = "1" ]; then volicon="🔇"; fi
+
+	echo "Sound  : $volicon $vol%" > $STATUSFOLDER/01sound
+}
+
+powercheck () {
+	bat=$(cat /sys/class/power_supply/BAT0/capacity)
+	plug=$(cat /sys/class/power_supply/AC0/online)
+
+	if [ $plug = "1" ]; then
+	   cbl="🔌"
+	else cbl="🔋"
+	fi
+
+	echo "Power  : $cbl $bat%" > $STATUSFOLDER/02power
+}
+
+netstatus () {
+	ethup=$(cat /sys/class/net/enp2s0f1/operstate)
+	wifiup=$(cat /sys/class/net/wlp3s0/operstate)
+
+	if [ $ethup = "up" ]; then
+	    nettype="🌐"
+            ip=$(/sbin/ip -o -4 addr list enp2s0f1 | awk '{print $4}' | cut -d/ -f1)
+	elif [ $wifiup = "up" ]; then
+   	    nettype="📡"
+            ip=$(/sbin/ip -o -4 addr list wlp3s0 | awk '{print $4}' | cut -d/ -f1)
+	else
+   	    nettype=" 🏚 "
+            ip="127.0.0.1"
+	fi
+
+	echo "Network: $nettype $ip" > $STATUSFOLDER/03network
+}
+
+getkeymap () {
+	
+	# Check if current is the same as the file and if not then change file.
+	# This is necessary because it could change as a result of computer reset
+	# but not get updated in the status file. Other statuses are constantly 
+	# changing so need to be constantly updated.
+	
+	current=$(setxkbmap -query | awk '$1 == "layout:" {print $2}')
+	keyfile=$(cat $STATUSFOLDER/04keymap | awk '{print $3}')
+	
+	if [ $current!=$keyfile ]; then keycheck ; fi
+}
+
+keycheck () {
+	if [ $current = "us" ]; then
+	    echo "KeyMap : 🇺🇸 American" > $STATUSFOLDER/04keymap
+	elif [ $current = "gb" ]; then
+	    echo "KeyMap : 🇬🇧 British" > $STATUSFOLDER/04keymap
+	elif [ $current = "es" ]; then
+	    echo "KeyMap : 🇪🇸 Español" > $STATUSFOLDER/04keymap
+	fi
+}
+
+weathercheck () {
+	weather=$(curl wttr.in/?format=1)
+	echo "Weather: $weather" > $STATUSFOLDER/05weather
+}
+
+btccheck () {
+	curbtc=$(curl -s gbp.rate.sx/1btc | cut -c 1,2,3,4,5,6,7,8)
+	echo "Bitcoin: 📈 £$curbtc" > $STATUSFOLDER/06btcprice
+}
+
+netupdates () {
+	hour=$(date +%H)
+	if [ $LASTCHECK = $hour ];
+	then
+	    return
+	else
+	    btccheck
+	    weathercheck
+	    echo $hour > $STATUSFOLDER/last_check
+	fi
+}
+
+show () {
+	echo "Time   : ⏰ $(date +'%H:%M')"
+	echo "Date   : 📅 $(date +'%Y-%m-%d')"
+
+	for i in $STATUSFOLDER/0* ; do echo "$(cat $i)"; done
+}
+
+# run functions to update files
+netupdates
+soundcheck
+powercheck
+netstatus
+getkeymap
+
+# do notification
+show

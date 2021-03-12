@@ -9,25 +9,21 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const char *fonts[]	    = { "JetBrainsMono-Regular:size=10",
-					"NotoColorEmoji:size=10:antialias=true:autohint=true" };
+					"JoyPixels:size=10:antialias=true:autohint=true" };
 static const char dmenufont[]	    = "JetBrainsMono-Regular:size=10";
 
-static const char col_themecol0[]    = "#bbbbbb";
-static const char col_themecol1[]    = "#eeeeee";
-static const char col_themecol2[]    = "#222222";
-static const char col_themecol3[]    = "#005577";
-static const char col_themecol4[]    = "#444444";
-static const char col_themecol5[]    = "#770000";
-
+static const char col_themecol0[]    = "#047BFF";
+static const char col_themecol1[]    = "#000000";
+static const char col_themecol2[]    = "#F300F0";
 
 static const char *colors[][3]      = {
 
 /*                       bar text,  bar color,   win border */
-	[SchemeNorm] = { col_themecol0, col_themecol2, col_themecol4 },
-	[SchemeSel]  = { col_themecol1, col_themecol3,  col_themecol5 }, };
+	[SchemeNorm] = { col_themecol2, col_themecol1, col_themecol1 },
+	[SchemeSel]  = { col_themecol1, col_themecol2,  col_themecol0 }, };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "🗑" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "[ 🗑 ]" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -43,15 +39,15 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.6; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "🐧 ",      tile },    /* first layout is default */
-	{ "👻 ",      NULL },    /* no layout function means floating behavior */
-	{ "🔍 ",      monocle }, };
+	{ "[ 👽 ]",      tile },    /* first layout is default */
+	{ "[ 👻 ]",      NULL },    /* no layout function means floating behavior */
+	{ "[ 🔍 ]",      monocle }, };
 
 /* key definitions */
 #define MODKEY Mod4Mask
@@ -68,8 +64,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,
 				"-fn", dmenufont,
-				"-nb", col_themecol2, "-nf", col_themecol0,
-				"-sb", col_themecol3, "-sf", col_themecol1, NULL };
+				"-nb", col_themecol1, "-nf", col_themecol0,
+				"-sb", col_themecol0, "-sf", col_themecol1, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include "shiftview.c"

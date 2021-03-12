@@ -1,0 +1,19 @@
+#!/bin/sh
+
+pdfdir="$HOME/Documents/Trumpet_PDFs"
+clear
+
+file="$(ls $pdfdir | smenu -c -W $'\n' -n 20 -X current 10 -m "Select A File To View:" -N -q)"
+echo "You Selected: $file"
+sleep 1
+
+### I wasted about 15 minutes trying to get this bit to work ###
+### It was unneccesary. All I needed was speech marks around ###
+### the file name... ###
+
+# formatted="$(printf %q "$pdfdir/$file")"
+# echo -e "Opening: $formatted"
+# sleep 1
+
+xdg-open "$pdfdir/$file"
+

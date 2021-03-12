@@ -1,0 +1,6 @@
+#!/bin/sh
+
+query=$(echo "" | dmenu -p "Search for: ")
+selection=$(find ~ -name *$query* | dmenu -i -l 15)
+action=$(echo "" | dmenu -p "Open with: ")
+$action "$selection"
