@@ -1,3 +1,22 @@
+The most important part of what is stored in this repo is in the bin folder. 
+On my computer this syncs to $HOME/.local/bin and is in my $PATH.
+The scripts worth looking at are called "status" and "dwmstat". 
+
+status collects information about power, network, sound volume and other things
+like the local weather and current bitcoin price (updated hourly) and puts that
+information into files in the $HOME/.status folder with a consistent formatting. 
+If run from the command line then status will then concatenate each of these files in turn. 
+I also have a keyboard shortcut set with sxhkd that will echo this output to dunst and 
+display the computer's status as a notification.
+
+dwmstat reads the files in $HOME/.status and uses awk to extract the icons that 
+represent the current system status. It will then assign the results to xsetroot
+thus setting a status bar for dwm. dwmstat updates once per minute, or when called 
+by a change. There is a script called "rsbar" to add this functionality to sxhkd,
+for example. 
+
+----------------------------------------------------------------------------------
+
 Updates to this file are added to the top.
 New users should read through each version from the bottom to understand
 functionality and changes I've made since writing about this build on my
