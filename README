@@ -9,7 +9,7 @@ If run from the command line then status will then concatenate each of these fil
 I also have a keyboard shortcut set with sxhkd that will echo this output to dunst and 
 display the computer's status as a notification.
 
-dwmstat reads the files in $HOME/.status and uses awk to extract the icons that 
+dwmstat creates a variable by running status and uses awk to extract the icons that 
 represent the current system status. It will then assign the results to xsetroot
 thus setting a status bar for dwm. dwmstat updates once per minute, or when called 
 by a change. There is a script called "rsbar" to add this functionality to sxhkd,
