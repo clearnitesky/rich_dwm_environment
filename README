@@ -17,6 +17,22 @@ for example.
 
 ----------------------------------------------------------------------------------
 
+A quick note about colours... In various versions of my config.h file for dwm I did
+many more things with the colour options than you'll see by looking at this repo. 
+For a time I used a program called pywal, that set the colours by analysing the
+current wallpaper... that was quite a nice thing. In earlier version I also shared
+both a light theme and a dark theme. At times I actually used the names of colours
+rather than just col_themecol variables, which meant I could keep the colours I liked
+in the file even if I wasn't using them. The thing is, I was updating this config.h
+file most days for about 18 months and so some the quirky things I tried over time
+are lost - probably for the better...
+The version that seems to be here looks just like the one that Luke Smith was using
+when he first switched to using dwm for LARBS. I don't know why that is, but it does
+look quite nice. Maybe if you look back through my changes over time you'll find some
+of my colour schemes should that interest you.
+
+----------------------------------------------------------------------------------
+
 Updates to this file are added to the top.
 New users should read through each version from the bottom to understand
 functionality and changes I've made since writing about this build on my
