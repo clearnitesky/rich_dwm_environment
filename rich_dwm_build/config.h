@@ -10,7 +10,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const char *fonts[]	    = { "JetBrainsMono-Regular:size=9",
 					"NotoColorEmoji:size=10:antialias=true:autohint=true" };
-static const char dmenufont[]	    = "JetBrainsMono-Regular:size=10";
+static const char dmenufont[]	    = "JetBrainsMono-Regular:size=9";
 
 static const char col_themecol0[]    = "#bbbbbb";
 static const char col_themecol1[]    = "#eeeeee";
