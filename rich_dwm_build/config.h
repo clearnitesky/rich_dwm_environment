@@ -2,13 +2,13 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const int swallowfloating    = 0;	/* swallowing on for floating windows */
+static const int swallowfloating    = 1;	/* swallowing on for floating windows */
 static const int gappx		    = 0;	/* initial window gaps */
 static const unsigned int snap      = 4;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]	    = { "JetBrainsMono-Regular:size=10",
+static const char *fonts[]	    = { "JetBrainsMono-Regular:size=9",
 					"NotoColorEmoji:size=10:antialias=true:autohint=true" };
 static const char dmenufont[]	    = "JetBrainsMono-Regular:size=10";
 

@@ -1,15 +1,18 @@
 [global]
   monitor = 0
   follow = keyboard
-  geometry = "350x16+4-4"
+  width = (100, 300)
+  offset = 8x24
+  origin = top-right
   indicate_hidden = false
   shrink = yes
   notfification_height = 0
   separator_height = 0
+  separator_color = auto
   horizontal_padding = 8
   frame_width = 2
   frame_color = "#770000"
-  font = JetBrainsMono 10
+  font = JetBrainsMono 9
   transparency = 15
 
 [urgency_low]

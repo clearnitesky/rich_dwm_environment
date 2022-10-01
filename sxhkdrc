@@ -1,5 +1,6 @@
 ### PROGRAM LAUNCH ###
-
+#super + space
+#	dmenu_run
 ### Config Progs ###
 alt + shift + w
 	st -e nmtui
@@ -11,8 +12,8 @@ alt + shift + r
 	arandr
 alt + shift + a
 	st -e pulsemixer
-alt + shift + s
-	st -e sudo wavemon
+#alt + shift + s
+#	st -e sudo wavemon
 alt + shift + k
 	proc_kill
 alt + shift + F4
@@ -23,7 +24,7 @@ alt + shift + F6
 	killall ffmpeg; notify-send "Recording ended"
 alt + shift + p
 	st
-super + shift + o
+alt + shift + o
 	optiswitch
 alt + shift + space
 	dmenu_run
@@ -46,34 +47,29 @@ alt + l
 	frescobaldi
 alt + n
 	simplenote
+alt + m
+	claws-mail
 alt + g
 	st -e trumpetpdf
 
 ### STATUS ###
 
+alt + shift + s
+	xcowsay "$(status)" -f JetBrainsMono
 alt + s
 	notify-send "$(status)"
 
 ### HOT KEYS ETC ###
-
-#XF86Launch1
-#	xset dpms force off
-XF86TouchpadToggle
- 	(synclient | grep "TouchpadOff.*1" && synclient TouchpadOff=0) || synclient TouchpadOff=1
-XF86Touchpad{Off,On}
-	synclient TouchpadOff={1,0}
 
 XF86MonBrightnessDown
 	brightnessctl s 5%-
 XF86MonBrightnessUp
 	brightnessctl s +5%
 
-# AUDIO KEYS
-
 XF86AudioMute
-	amixer sset Master toggle; ~/.local/bin/soundcheck; notify-send "$(cat ~/.status/01sound)" -t 1050; rsbar
+	amixer sset Master toggle; status; notify-send "$(cat ~/.status/01sound)" -t 1050; rsbar
 XF86Audio{Raise,Lower}Volume
-	amixer sset Master 5%{+,-}; ~/.local/bin/soundcheck; notify-send "$(cat ~/.status/01sound)" -t 1050; rsbar
+	amixer sset Master 5%{+,-}; status; notify-send "$(cat ~/.status/01sound)" -t 1050; rsbar
 
 #XF86Audio{Next,Prev}
 #	mpc {next,prev}
