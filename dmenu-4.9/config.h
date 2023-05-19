@@ -9,14 +9,14 @@ static const char *fonts[] = {
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 
-#include "/home/rich/.cache/wal/colors-wal-dmenu.h"
+/* #include "/home/rich/.cache/wal/colors-wal-dmenu.h" */
 
-/* Luke Smith's Colours
+/* Luke Smith's Colours */
 static const char *colors[SchemeLast][2] = {
 	[SchemeNorm] = { "#bbbbbb", "#222222" },
-	[SchemeSel] = { "#eeeeee", "#005577" },
+	[SchemeSel] = { "#eeeeee", "#484A56" },
 	[SchemeOut] = { "#000000", "#00ffff" },
-}; */
+};
 
 
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */

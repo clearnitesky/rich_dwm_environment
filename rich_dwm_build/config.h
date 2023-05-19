@@ -17,14 +17,14 @@ static const char col_themecol1[]    = "#eeeeee";
 static const char col_themecol2[]    = "#222222";
 static const char col_themecol3[]    = "#005577";
 static const char col_themecol4[]    = "#444444";
-static const char col_themecol5[]    = "#770000";
+static const char col_themecol5[]    = "#484A56";
 
 
 static const char *colors[][3]      = {
 
-/*                       bar text,  bar color,   win border */
-	[SchemeNorm] = { col_themecol0, col_themecol2, col_themecol4 },
-	[SchemeSel]  = { col_themecol1, col_themecol3,  col_themecol5 }, };
+/*                       bar text,      bar color,     win border    */
+	[SchemeNorm] = { col_themecol0, col_themecol2, col_themecol5 },
+	[SchemeSel]  = { col_themecol1, col_themecol5, col_themecol5 }, };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "🗑" };
@@ -69,7 +69,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon,
 				"-fn", dmenufont,
 				"-nb", col_themecol2, "-nf", col_themecol0,
-				"-sb", col_themecol3, "-sf", col_themecol1, NULL };
+				"-sb", col_themecol5, "-sf", col_themecol1, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include "shiftview.c"
